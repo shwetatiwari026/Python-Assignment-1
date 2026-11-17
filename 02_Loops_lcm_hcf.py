@@ -1,17 +1,22 @@
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
 
-# Find HCF using the Euclidean loop method.
-x, y = abs(a), abs(b)
-while y != 0:
-    x, y = y, x % y
-hcf = x
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
-# LCM is zero if either input is zero.
+num1 = abs(a)
+num2 = abs(b)
+
+while num2 != 0:
+    remainder = num1 % num2
+    num1 = num2
+    num2 = remainder
+
+hcf = num1
+
 if a == 0 or b == 0:
     lcm = 0
 else:
     lcm = abs(a * b) // hcf
 
-print("HCF:", hcf)
-print("LCM:", lcm)
+print("HCF of the numbers is:", hcf)
+print("LCM of the numbers is:", lcm)
+
