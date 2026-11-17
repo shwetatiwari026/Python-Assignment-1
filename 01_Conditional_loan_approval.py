@@ -1,19 +1,14 @@
-salary = float(input("Enter monthly salary in rupees: "))
-credit_score = int(input("Enter credit score: "))
-age = int(input("Enter age: "))
 
-salary_ok = salary >= 30000
-credit_ok = credit_score >= 700
-age_ok = 21 <= age <= 60
+salary = float(input("Enter your monthly salary: "))
+credit_score = int(input("Enter your credit score: "))
+age = int(input("Enter your age: "))
 
-conditions_met = sum([salary_ok, credit_ok, age_ok])
+if salary >= 30000 and credit_score >= 700 and age >= 21 and age <= 60:
+    print("Congratulations! Your loan is approved.")
 
-if conditions_met == 3:
-    print("Loan status: Approved")
-elif conditions_met == 2:
-    print("Loan status: Conditionally Approved")
+elif (salary >= 30000 and credit_score >= 700) or (salary >= 30000 and age >= 21 and age <= 60) or (credit_score >= 700 and age >= 21 and age <= 60):
+    print("Your loan is conditionally approved.")
+
 else:
     print("Loan status: Rejected")
 
-# The assignment does not define the conditional-approval rule.
-# This solution uses 2 out of 3 conditions as conditional approval.
