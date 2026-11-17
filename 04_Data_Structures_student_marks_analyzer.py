@@ -1,20 +1,46 @@
-students = {}
-student_count = int(input("How many students? "))
 
-for i in range(student_count):
-    name = input(f"Enter name of student {i + 1}: ")
-    marks = list(map(float, input("Enter marks in subjects separated by spaces: ").split()))
+students = {}
+
+n = int(input("Enter number of students: "))
+
+for i in range(n):
+    name = input("Enter student name: ")
+    marks = []
+
+    for j in range(3):
+        mark = float(input("Enter subject marks: "))
+        marks.append(mark)
+
     students[name] = marks
 
-if not students:
-    print("No student records were entered.")
-else:
-    topper = max(students, key=lambda name: sum(students[name]) / len(students[name]))
-    all_marks = [mark for marks in students.values() for mark in marks]
-    average = sum(all_marks) / len(all_marks) if all_marks else 0
+if n == 0:
+    print("No student records found.")
 
-    print("Topper:", topper)
-    print("Class average of all entered marks:", round(average, 2))
-    print("Students with at least one subject below 33:")
-    failures = [name for name, marks in students.items() if any(mark < 33 for mark in marks)]
-    print(failures if failures else "None")
+else:
+    highest = 0
+    topper = ""
+
+    total = 0
+    count = 0
+
+    for name in students:
+        average = sum(students[name]) / 3
+
+        if average > highest:
+            highest = average
+            topper = name
+
+        for mark in students[name]:
+            total = total + mark
+            count = count + 1
+
+    print("Class topper:", topper)
+    print("Class average:", round(total / count, 2))
+
+    print("Students who failed:")
+
+    for name in students:
+        for mark in students[name]:
+            if mark < 33:
+                print(name)
+                break
