@@ -16,5 +16,4 @@ else:
     compressed += text[-1] + str(count)
     print("Compressed string:", compressed)
 
-# Note: the sheet's example says aaaabbc -> a3b2c1.
-# Actually aaaabbc contains four 'a' characters, so this code correctly gives a4b2c1.
+
