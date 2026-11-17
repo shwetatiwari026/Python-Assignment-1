@@ -1,6 +1,5 @@
 sentence = input("Enter a string: ")
 
-# Remove spaces and ignore capital/small letter differences.
 cleaned = sentence.replace(" ", "").lower()
 
 if cleaned == cleaned[::-1]:
