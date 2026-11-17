@@ -1,4 +1,4 @@
-# A small dictionary-based library record: book name -> available quantity.
+
 library = {"Python Basics": 3, "Learning Java": 2}
 
 while True:
