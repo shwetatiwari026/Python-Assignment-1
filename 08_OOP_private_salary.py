@@ -1,7 +1,7 @@
 class Employee:
     def __init__(self, name, salary):
-        self.name = name
-        self.__salary = salary  # Double underscore makes this a name-mangled attribute.
+        self.name = Name
+        self.__salary = Salary  
 
     def show_details(self):
         print("Employee:", self.name)
@@ -11,4 +11,3 @@ class Employee:
 employee = Employee("Aman", 30000)
 employee.show_details()
 
-# Accessing employee.__salary directly is intentionally not allowed.
