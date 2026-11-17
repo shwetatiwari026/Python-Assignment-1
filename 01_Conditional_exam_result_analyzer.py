@@ -1,21 +1,28 @@
-marks = []
-for subject in range(1, 6):
-    mark = float(input(f"Enter marks for subject {subject} (out of 100): "))
-    marks.append(mark)
 
-if any(mark < 0 or mark > 100 for mark in marks):
-    print("Please enter marks between 0 and 100.")
-elif any(mark < 33 for mark in marks):
-    print("Result: Fail (at least one subject is below 33).")
+marks = []
+
+for i in range(1, 6):
+    marks.append(float(input("Enter your marks: ")))
+
+if any(m < 0 or m > 100 for m in marks):
+    print("Please enter valid marks between 0 and 100.")
+
+elif any(m < 33 for m in marks):
+    print("Sorry, you are fail because you scored less than 33 in a subject.")
+
 else:
     average = sum(marks) / 5
-    print(f"Average: {average:.2f}%")
+
+    print("Your average marks are:", round(average, 2))
 
     if average >= 60:
-        print("Result: First Division")
+        print("You got First Division!")
+
     elif average >= 50:
-        print("Result: Second Division")
+        print("You got Second Division!")
+
     elif average >= 40:
-        print("Result: Third Division")
+        print("You got Third Division!")
+
     else:
-        print("Result: Pass, but the assignment does not specify a division below 40%.")
+        print("You passed!")
