@@ -1,4 +1,4 @@
-correct_password = "python123"  # Demo password; change it for your own practice.
+correct_password = "python123"  
 attempts = 0
 maximum_attempts = 3
 
